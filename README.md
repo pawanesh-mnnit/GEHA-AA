@@ -10,21 +10,15 @@ In this work, we propose an end-to-end framework that jointly integrates graph-b
 
 ![Method Pipeline](Viz_Results/ActionAnticipation.png)
 
-1. Input Video Acquisition
-2. Frame Sampling and Preprocessing
-3. Multimodal Feature Extraction
-4. Early Multimodal Feature Fusion
-5. Feature Storage and Alignment
-6. Observation Window Construction
-6. Time-Based Future Label Assignment
-7. Graph Construction over Observed Frames
-8. Graph-Enhanced Relational Reasoning (GAT)
-9. Temporal Encoding with Transformer Encoder
-10. Fusion of Graph and Temporal Representations (GETR Output)
-11. Horizon-Aware Query Initialization
-12. Horizon-Aware Transformer Decoding (HATD)
-13. Horizon-Specific Classification
-  Separate classification heads predict verb, noun, and action labels independently for each anticipation horizon.
-14. Loss Computation and Optimization
-15. Multi-Horizon Action Anticipation Output
-  The final output consists of verb, noun, and action predictions across multiple future anticipation times.
+1. Multimodal Feature Extraction and Fusion
+   RGB frames and optical flow are processed using a pretrained ResNet-50 backbone, and their features are fused at the feature level to obtain a unified multimodal representation for each frame.
+2. Observation Window Construction and Label Assignment
+   Fixed-length observation windows are constructed from fused features ending at annotated action boundaries, while future verb, noun, and action labels are assigned using time-based anticipation horizons.
+3. Graph-Based Relational Modeling
+   A dynamic k-nearest-neighbor similarity graph is built over observed frames, and a Graph Attention Network propagates information across semantically related frames to capture non-local relationships.
+4. Global Temporal Encoding
+  The observed feature sequence is simultaneously processed by a Transformer encoder with positional embeddings to model ordered temporal evolution and long-range dependencies.
+5. Graph-Enhanced Temporal Reasoning (GETR)
+  Relational features from the graph branch and temporal features from the transformer branch are fused to form a unified graph-enhanced temporal memory of the observed clip.
+6. Horizon-Aware Decoding and Prediction
+  Learnable horizon queries attend to the fused memory via a Transformer decoder, producing horizon-specific representations that are used to predict future verb, noun, and action labels across multiple anticipation times.
