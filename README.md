@@ -6,7 +6,7 @@ In this work, we propose an end-to-end framework that jointly integrates graph-b
 ![Method Pipeline](Viz_Results/AA_Intro.png)
 
 
-## Our Proposed Architecture
+## Our Proposed Architecture (GEHA-AA)
 
 ![Method Pipeline](Viz_Results/ActionAnticipation.png)
 
