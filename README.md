@@ -8,7 +8,7 @@ In this work, we propose an end-to-end framework that jointly integrates graph-b
 
 ## Our Proposed Architecture (GEHA-AA)
 
-![Method Pipeline](Viz_Results/ActionAnticipation.png)
+![Method Pipeline](Viz_Results/ActionAnticipation1.png)
 
 1. Multimodal Feature Extraction and Fusion
    RGB frames and optical flow are processed using a pretrained ResNet-50 backbone, and their features are fused at the feature level to obtain a unified multimodal representation for each frame.
