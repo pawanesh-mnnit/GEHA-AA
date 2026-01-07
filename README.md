@@ -1,12 +1,12 @@
-# GEHA-AA
-In this work, we propose an end-to-end framework that jointly integrates graph-based temporal reasoning and Transformer-based action anticipation, termed GEHA-AA.
+# EgoHAnG
+In this work, we propose an end-to-end framework that jointly integrates graph-based temporal reasoning and Transformer-based action anticipation, termed EgoHAnG.
 
 ## Action Anticipation
 
 ![Method Pipeline](Viz_Results/AA_Intro.png)
 
 
-## Our Proposed Architecture (GEHA-AA)
+## Our Proposed Architecture (EgoHAnG)
 
 ![Method Pipeline](Viz_Results/ActionAnticipation1.png)
 
